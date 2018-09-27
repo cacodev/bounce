@@ -10,14 +10,14 @@
 
     function addSocketBall(ballData) {
         let ball = new Ball(ballData);
-        ball.addEventListener('deadball', removeBall);
+        //ball.addEventListener('deadball', removeBall);
         balls.push(ball);
     }
 
     function clickAddBall() {
         let ball = new Ball();
         socket.emit('addBall', ball.toDto());
-        ball.addEventListener('deadball', removeBall);
+        //ball.addEventListener('deadball', removeBall);
         balls.push(ball)
     }
 
@@ -116,7 +116,7 @@
                 (this.y - this.size >= height) || 
                 (this.y + this.size <= 0)) {
                 this.color = 'rgba(0,0,0,0)';
-                this.emit('deadball', this);
+                //this.emit('deadball', this);
             } else {
                 this.x += this.velX;
                 this.y += this.velY;
